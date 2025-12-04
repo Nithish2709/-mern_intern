@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <h1 class="t" style="text-align:center">Register Form</h1>
+    </header>
+    <artical>
+        <center>
+         <form action="/register" method="post">
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username" required><br><br>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required><br><br>
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" required><br><br>
+              <label for="gender">Gender</label>
+                <input type="radio" name="gender">Male</input>
+                <input type="radio" name="gender">Female</input><br><br>
+              <label >where did you hear about as?:</label>
+                <select name="source" id="source">
+                    <option value="social media">Social Media</option>
+                    <option value="friend">Friend</option>
+                    <option value="advertisement">Advertisement</option>
+                    <option value="other">Other</option></select><br><br>
+                    <input type="checkbox" name="terms" required>I agree to the terms and conditions<br><br>
+              <input type="submit" value="Register" ><p>already have account<a href="form.html"> login here</a></p>
+    </form>
+</center>
+        </artical>
+</body>
+</html>
