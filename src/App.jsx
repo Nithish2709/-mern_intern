@@ -28,30 +28,47 @@ function App() {
   
   return (
     <>
-    <div style={{ width:"100%"}} >
-         <header style={{ width:"100%"}}>
-          <h1  className="bg-cyan;">My App </h1>     
-          <nav className='l' style={{ width:"100%"}}>
-              <Link to="/" className="o"> Home  |{" "} </Link>
-              <Link to="/about" className="o">About Us | {" "} </Link>
-              <Link to="/contact" className="o"> Contact us |{" "}   </Link>
-              <Link to="/products"className="o">Products | {" "}</Link>
-              <Link to="/cart"className="o" >cart{cart.length} | {" "}</Link>
+    <div  className="min-h-screen w-full bg-teal-200 text-gray-900" >
+
+         <header  className="bg-cyan-200 shadow-lg" >
+          <h1 className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between" >My App </h1>     
+          <nav className="flex flex-wrap items-center gap-4 text-sm font-semibold">
+              <Link to="/" className="hover:text-red-600"> Home  |{" "} </Link>
+              <Link to="/about"  className="hover:text-red-600" >About Us | {" "} </Link>
+              <Link to="/contact" className="hover:text-red-600"> Contact us |{" "}   </Link>
+              <Link to="/products" className="hover:text-red-600">Products | {" "}</Link>
+              <Link to="/cart" className="hover:text-red-600">cart{cart.length} | {" "}</Link>
               
+              <Link to="/cart" className="hover:text-red-600">
+                Cart
+                <span className="ml-1 bg-red-600 text-white text-xs px-2 py-1 rounded-full">
+                  {cart.length}
+                </span>
+              </Link>
               {localStorage.getItem("email") ? (
-                 <button onClick={lagout} className="o">Logout</button>
-              ) : ( 
-            <Link to="/login" className="o">Login</Link>
-              ) 
-              }
-              <hr></hr>
+                <button
+                  onClick={lagout}
+                  className="bg-red-600 text-white px-4 py-1 rounded hover:bg-red-700 transition">
+                  Logout
+                </button>
+              ) :
+               (
+                <Link
+                  to="/login"
+                  className="bg-green-600 text-white px-4 py-1 rounded hover:bg-green-700 transition"
+                >
+                  Login
+                </Link>
+              )}
+              
 
           </nav>
+          <hr></hr>
 
          </header>
          
-         <main >
-         <Routes>
+         <main className="w-full" >      
+          <Routes>
           <Route path="/" element={<Home/>}>Home</Route>
           <Route path="/About" element={<About/>}>About</Route>
           <Route path="/Contact" element={<Contact/>}>Contact</Route>
@@ -70,7 +87,7 @@ function App() {
          </main>
          
          </div>
-      </>
+  </>
   )
 }
 
